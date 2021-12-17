@@ -21,6 +21,7 @@ import 'package:openfoodfacts/utils/AbstractQueryConfiguration.dart';
 import 'package:openfoodfacts/utils/CountryHelper.dart';
 import 'package:openfoodfacts/utils/ImageHelper.dart';
 import 'package:openfoodfacts/utils/OcrField.dart';
+import 'package:openfoodfacts/utils/OpenFoodAPIConfiguration.dart';
 import 'package:openfoodfacts/utils/PnnsGroupQueryConfiguration.dart';
 import 'package:openfoodfacts/utils/PnnsGroups.dart';
 import 'package:openfoodfacts/utils/ProductListQueryConfiguration.dart';
@@ -168,6 +169,7 @@ class OpenFoodAPIClient {
     Response response = await HttpHelper().doGetRequest(
       productUri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
     var result = ProductResult.fromJson(json.decode(response.body));
@@ -194,6 +196,7 @@ class OpenFoodAPIClient {
     Response response = await HttpHelper().doGetRequest(
       productUri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
     final jsonStr = _replaceQuotes(response.body);
@@ -253,6 +256,7 @@ class OpenFoodAPIClient {
     Response response = await HttpHelper().doGetRequest(
       searchUri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
     final jsonStr = _replaceQuotes(response.body);
@@ -278,6 +282,7 @@ class OpenFoodAPIClient {
     final Response response = await HttpHelper().doGetRequest(
       uri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
 
@@ -306,6 +311,7 @@ class OpenFoodAPIClient {
     Response response = await HttpHelper().doGetRequest(
       searchUri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
     final jsonStr = _replaceQuotes(response.body);
@@ -326,6 +332,7 @@ class OpenFoodAPIClient {
     final Response response = await HttpHelper().doGetRequest(
       uri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
 
@@ -455,6 +462,7 @@ class OpenFoodAPIClient {
     Response response = await HttpHelper().doGetRequest(
       insightUri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
     var result =
@@ -476,6 +484,7 @@ class OpenFoodAPIClient {
     Response response = await HttpHelper().doGetRequest(
       insightsUri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
 
@@ -508,6 +517,7 @@ class OpenFoodAPIClient {
     Response response = await HttpHelper().doGetRequest(
       robotoffQuestionUri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
     var result = RobotoffQuestionResult.fromJson(
@@ -549,6 +559,7 @@ class OpenFoodAPIClient {
     Response response = await HttpHelper().doGetRequest(
       robotoffQuestionUri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
     var result = RobotoffQuestionResult.fromJson(
@@ -618,6 +629,7 @@ class OpenFoodAPIClient {
     Response response = await HttpHelper().doGetRequest(
       spellingCorrectionUri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
     SpellingCorrection result = SpellingCorrection.fromJson(
@@ -651,6 +663,7 @@ class OpenFoodAPIClient {
     Response response = await HttpHelper().doGetRequest(
       ocrUri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
 
@@ -680,6 +693,7 @@ class OpenFoodAPIClient {
 
     Response response = await HttpHelper().doGetRequest(
       suggestionUri,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
 
@@ -834,6 +848,7 @@ class OpenFoodAPIClient {
     try {
       final Response response = await HttpHelper().doGetRequest(
         uri,
+        userAgent: OpenFoodAPIConfiguration.userAgent,
         queryType: queryType,
       );
       if (response.statusCode != 200) {
@@ -873,6 +888,7 @@ class OpenFoodAPIClient {
     try {
       final Response response = await HttpHelper().doGetRequest(
         uri,
+        userAgent: OpenFoodAPIConfiguration.userAgent,
         queryType: queryType,
       );
       if (response.statusCode != 200) {
@@ -906,6 +922,7 @@ class OpenFoodAPIClient {
 
     final Response response = await HttpHelper().doGetRequest(
       uri,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
     if (response.statusCode != 200) {
@@ -1011,6 +1028,7 @@ class OpenFoodAPIClient {
     final Response response = await HttpHelper().doGetRequest(
       uri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
     if (response.statusCode != 200) {
@@ -1061,6 +1079,7 @@ class OpenFoodAPIClient {
     final Response response = await HttpHelper().doGetRequest(
       uri,
       user: user,
+      userAgent: OpenFoodAPIConfiguration.userAgent,
       queryType: queryType,
     );
     if (response.statusCode != 200) {
