@@ -392,7 +392,7 @@ ProductQueryConfiguration configurations = ProductQueryConfiguration(
           fields: [ProductField.NUTRIMENTS,
                    ProductField.INGREDIENTS_TEXT,
                    ProductField.INGREDIENTS,
-                   ProductField.ADDITIVES
+                   ProductField.ADDITIVES,
                    ProductField.NUTRIENT_LEVELS]);
 
 ProductResult result = await OpenFoodAPIClient.getProduct(configurations,
